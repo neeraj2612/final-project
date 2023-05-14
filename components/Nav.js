@@ -21,16 +21,23 @@ export default function Nav() {
         {user && (
           <div className="flex items-center gap-6">
             <Link href="/post">
-              <button className="font-medium bg-cyan-500 text-white py-2 px-4 rounded-mg textx-sm">
+              <button className="font-medium bg-cyan-500 text-white py-2 px-4 rounded-md textx-sm hover:bg-cyan-600 shadow-lg">
                 Post
               </button>
             </Link>
+            <button
+        className="font-medium text-white bg-cyan-500 py-2 px-4 my-6 rounded-md hover:bg-cyan-600 shadow-lg"
+        onClick={() => auth.signOut()}
+      >
+        Sign out
+      </button>
             <Link href="/dashboard">
               <img
-                className="w-12 rounded-full cursor-pointer"
+                className="w-12 rounded-full cursor-pointer "
                 src={user.photoURL}
               />
             </Link>
+            
           </div>
         )}
       </ul>
